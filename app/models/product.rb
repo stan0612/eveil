@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
+  belongs_to :seller, class_name: "User", foreign_key: :user_id
+
   mount_uploader :image, PhotoUploader
 
-  belongs_to :seller_id, class_name: "User", foreign_key: :user_id
   has_many :reviews, through: :order
 
   validates :title, presence: true
