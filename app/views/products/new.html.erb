@@ -1,0 +1,16 @@
+<div class="container">
+ <div class="row">
+  <div class="col-md-8 col-md-offset-2">
+   <h1>Create a new product</h1>
+​
+   <%= simple_form_for @product do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :initial_stock %>
+    <%= f.input :category %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+   <% end %>
+  </div>
+ </div>
+</div>
