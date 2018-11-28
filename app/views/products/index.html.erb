@@ -11,13 +11,13 @@
     <!-- Code your cards  here -->
     <% @products.each do |p| %>
     <%= link_to p do  %>
-    <div class="card">
+    <div class="card" >
       <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2);">
         <%= cl_image_tag p.image, height: 180, crop: :fill %>
         <!-- <span class="card-category">TEXAS</span> -->
         <div class="card-description">
-          <h2><%= p.title %></h2>
-          <p><%= p.category %></p>
+          <%= p.title %><br><br>
+          <%= p.category %>
         </div>
         <!-- <img class="avatar-large" src="images/actrice1.jpg">
         <a class="card-link" href="#"></a> -->
@@ -31,6 +31,8 @@
     <% end %>
 
 
+<!-- style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2);
+ -->
 
 
 
