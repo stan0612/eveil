@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= cl_image_tag @product.image, height: 300, width: 400, crop: :fill %>
+      <h1><%= @product.title %></h1>
+      <p><%= @product.description %></p>
+      <p><%= @product.price %></p>
+      <p><%= @product.category %></p>
+      <p><%= link_to "Back to all products", root_path %></p>
+    </div>
+  </div>
+</div>
+
