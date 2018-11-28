@@ -1,2 +1,119 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body {
+  margin: 0;
+  margin-bottom: 100px;
+  font-family: 'Varela Round', sans-serif;
+}
+h1, h2, h3, {
+  font-family: Raleway, Helvetica, sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto; /* 0px => top/bottom, automatic => left/right */
+}
+
+.cards {
+  display: flex;
+}
+
+.card {
+  flex: 1 1 auto;
+  margin: 10px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.card-body {
+  height: 180px;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  opacity: 0.9;
+}
+
+.card-description{
+  position: absolute;
+  font-size: 9px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: rgba(0,0,0,0.4);
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.4);
+}
+
+/* Your button CSS code here */
+.btn-yours {
+  color: #333;
+  background : white;
+  border: 1px solid #333;
+  padding: 15px 25px;
+  font-weight: bold;
+  text-decoration: none
+}
+
+.btn-yours:hover {
+  color: white;
+  background : #333;
+  border: 1px solid #333;
+  padding: 15px 25px;
+  font-weight: bold;
+  transition: background 0,3s ease;
+}
+
+/* Your banner CSS code here */
+/* Your banner CSS file */
+.banner {
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), asset-url('banner.jpg');
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.banner-content {
+  color: white;
+  text-align: center;
+}
