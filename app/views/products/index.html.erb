@@ -1,11 +1,39 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-  <div class="banner-content">
-    <h1>Eveil Market</h1>
-    <p>Learn to scrubs</p>
-    <%= link_to "create product", new_product_path %>
+<div class="banner">
+  <div class="banner-content" >
+    <h1>WELCOME</h1>
+    <p>Ici tous nos produits sont 100% quali !<br><br></p>
+    <a href="" class="btn-yours">Nos produits</a>
   </div>
 </div>
+<div class="container">
+  <h2 class="text-center">Nos produits</h2>
+  <div class="cards">
+    <!-- Code your cards  here -->
+    <% @products.each do |p| %>
+    <%= link_to p do  %>
+    <div class="card">
+      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2);">
+        <%= cl_image_tag p.image, height: 180, crop: :fill %>
+        <!-- <span class="card-category">TEXAS</span> -->
+        <div class="card-description">
+          <h2><%= p.title %></h2>
+          <p><%= p.category %></p>
+        </div>
+        <!-- <img class="avatar-large" src="images/actrice1.jpg">
+        <a class="card-link" href="#"></a> -->
+      </div>
+      <div class="card-footer">
+        <p>SEE PRODUCT</p>
 
-<% @products.each do |p| %>
-<%= p.title %>
-<% end  %>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+
+
+
+
+
+
+  </div>
+</div>
