@@ -1,12 +1,21 @@
 <div class="banner">
   <div class="banner-content" >
-    <h1>FRESH PRODUCTS FOR FRESH PEOPLE</h1>
-    <p><i>Let's pimp your beauty</i><br><br></p>
-    <a href="" class="btn-yours">Our products</a>
+
+    <h1>WELCOME</h1>
+    <p>Tous vos produits pour votre beauté!<br><br></p>
+    <a href="" class="btn-yours">Nos produits pour vous combler</a>
   </div>
 </div>
 <div class="container">
-  <h2 class="text-center">Our products</h2>
+  <%= form_tag products_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Recherchez vos secrets"
+    %>
+  <% end %>
+  <h2 class="text-center">Nos produits</h2>
+
   <div class="cards">
     <!-- Code your cards  here -->
     <% @products.each do |p| %>
