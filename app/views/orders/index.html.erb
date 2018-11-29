@@ -8,6 +8,7 @@
       <p>Description: <%= order.product.description %></p>
       <p>Quantity: <%= order.quantity %></p>
       <p>Price : <%= order.product.price * order.quantity %> €</p>
+      <%= link_to "Pay", pay_order_path(order), class: "btn-yours" %>
     <% end %>
   </div>
 </div>

@@ -3,8 +3,9 @@ class Product < ApplicationRecord
 
 
   belongs_to :seller, class_name: "User", foreign_key: :user_id
+  has_many :orders
+  has_many :reviews, through: :orders
 
-  has_many :reviews, through: :order
 
   validates :title, presence: true
   validates :description, presence: true

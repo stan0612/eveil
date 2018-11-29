@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def index
     @orders = Order.all
   end
@@ -15,8 +16,11 @@ class OrdersController < ApplicationController
   end
 
   def pay
+    @order = Order.find(params[:id])
+    @order.paid = true
+    @order.save
+    redirect_to add_reviews_path
   end
-
 
   private
 
