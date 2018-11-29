@@ -20,11 +20,14 @@ h1, h2, h3, {
 
 .cards {
   display: flex;
+  justify-content: space-around;
+
 }
 
 .card {
   flex: 1 1 auto;
   margin: 10px;
+  background-image: cover;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
@@ -48,9 +51,10 @@ h1, h2, h3, {
   opacity: 0.9;
 }
 
-.card-description{
+.card-description {
+  color: black;
   position: absolute;
-  font-size: 9px;
+  font-size: 14px;
   bottom: 10px;
   left: 10px;
 }
@@ -98,6 +102,7 @@ h1, h2, h3, {
   padding: 15px 25px;
   font-weight: bold;
   transition: background 0,3s ease;
+  text-decoration: none
 }
 
 /* Your banner CSS code here */
@@ -110,7 +115,7 @@ h1, h2, h3, {
   color: white;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: calc(100vh - 100px);
 }
 
 .banner-content {
