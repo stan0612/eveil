@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <% @orders.each do |order| %>
-      <%= cl_image_tag("order.product.image",
+      <%= cl_image_tag("#{order.product.image}",
       width: 400, height: 300, crop: :fill) %>
       <h1><%= order.product.title %></p>
       <p>Description: <%= order.product.description %></p>
