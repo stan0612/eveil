@@ -8,8 +8,12 @@
       <p><%= @product.description %></p>
       <p><%= @product.price %> €</p>
       <p>Category: <%= @product.category %></p>
+      <%= simple_form_for [@order] do |f| %>
+      <%= f.association :product, as: :hidden %>
+      <%= f.input :quantity %>
+      <%= f.submit "Add to card", class: "btn-yours", method: :post%>
+      <% end %>
       <p><%= link_to "Back to all products", root_path %></p>
-      <br>
-      <a href="" class="btn-yours">Add to card</a>
+
       </div>
   </div>
