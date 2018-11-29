@@ -1,15 +1,21 @@
 <div class="container">
  <div class="row">
-  <div class="col-md-8 col-md-offset-2">
-   <h1>Create a new product</h1>
+  <div class="col-md-8 col-md-offset-2" class="form">
+   <h1>TELL US YOUR SECRET PRODUCT!</h1>
 ​
    <%= simple_form_for @product do |f| %>
+   <h3>What's the product name?</h3>
     <%= f.input :title %>
+    <h3>Tell us more</h3>
     <%= f.input :description %>
+    <h3>Mmh interesting, how much?</h3>
     <%= f.input :price %>
+     <h3>I want one!</h3>
     <%= f.input :initial_stock %>
     <%= f.input :category %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
+    <%= f.button :submit, class: 'btn-yours' %>
    <% end %>
   </div>
  </div>
