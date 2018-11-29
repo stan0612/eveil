@@ -1,19 +1,26 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Orders.all
+    @orders = Order.all
   end
 
   def create
-    @product = Product.find(params[:product_id])
     @order = Order.new(order_params)
-    @order.product = @product
-    redirect_to orders_path
+    @order.buyer = current_user
+    if @order.save
+      redirect_to orders_path
+    else
+      @product = @order.product
+      render 'products/show'
+    end
   end
+
+  def pay
+  end
+
 
   private
 
   def order_params
-    params.require(:order).permit(:quantity, :paid)
+    params.require(:order).permit(:product_id, :quantity)
   end
-
 end

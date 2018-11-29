@@ -1,20 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'san_francisco.jpg' %>');">
-  <div class="banner-content">
-    <h1>Your order(s) !</h1>
-    <p>Pay now or back to store</p>
-  </div>
-</div>
+
 <div class="container">
   <div class="row">
-  <div class="row">
-    <% @orders.products.each do |order| %>
-      <%= cl_image_tag("order.image",
+    <% @orders.each do |order| %>
+      <%= cl_image_tag("order.product.image",
       width: 400, height: 300, crop: :fill) %>
-      <p>order.product.title</p>
-      <p>order.product.description</p>
-      <p>order.product.price/p>
+      <h1><%= order.product.title %></p>
+      <p>Description: <%= order.product.description %></p>
+      <p>Quantity: <%= order.quantity %></p>
+      <p>Price : <%= order.product.price * order.quantity %> €</p>
     <% end %>
-  </div>
   </div>
 </div>
 
