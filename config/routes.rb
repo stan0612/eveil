@@ -7,6 +7,3 @@ Rails.application.routes.draw do
       get 'pay', to: 'orders#pay'
     end
   end
-  resources :reviews, only: [:create]
-  get 'add_reviews', to: 'reviews#add_reviews'
-end

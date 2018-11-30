@@ -1,11 +1,18 @@
 <div class="banner">
   <div class="banner-content" >
     <h1>WELCOME</h1>
-    <p>Ici tous nos produits sont 100% quali !<br><br></p>
-    <a href="" class="btn-yours">Nos produits</a>
+    <p>Tous vos produits pour votre beauté!<br><br></p>
+    <a href="" class="btn-yours">Nos produits pour vous combler</a>
   </div>
 </div>
 <div class="container">
+  <%= form_tag products_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Recherchez vos secrets"
+    %>
+  <% end %>
   <h2 class="text-center">Nos produits</h2>
   <div class="cards">
     <!-- Code your cards  here -->
