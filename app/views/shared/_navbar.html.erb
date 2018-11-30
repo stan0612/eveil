@@ -11,26 +11,26 @@
 
 
       <!-- Links when logged in -->
-      <div class="navbar-wagon-link">
-        <%= link_to "ORDERS", orders_path %>
-        <%= link_to "ADD REVIEWS", add_reviews_path %>
+      <div class="btn-yours">
+    <!--     <%= link_to "ORDERS", orders_path %>
+        <%= link_to "ADD REVIEWS", add_reviews_path %> -->
         <%= link_to "CREATE YOUR PRODUCT", new_product_path %>
       </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "https://pbs.twimg.com/profile_images/644620840114503680/sm8PDvj2_400x400.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
+
+              <%= link_to "Orders", orders_path %>
+
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
+
+              <%= link_to "Add reviews", add_reviews_path%>
+
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
