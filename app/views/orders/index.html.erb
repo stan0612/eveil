@@ -1,15 +1,25 @@
-
 <div class="container">
+  <% @orders.each do |order| %>
   <div class="row">
-    <% @orders.each do |order| %>
+    <div class="col-xs-12 col-sm-4" style="padding-top: 50px">
       <%= cl_image_tag("#{order.product.image}",
       width: 400, height: 300, crop: :fill) %>
-      <h1><%= order.product.title %></p>
+    </div>
+    <div class="col-xs-12 col-sm-6"  style="padding-left: 100px; padding-top: 79px">
+      <h1 class="textorder"><%= order.product.title %></h1>
       <p>Description: <%= order.product.description %></p>
       <p>Quantity: <%= order.quantity %></p>
       <p>Price : <%= order.product.price * order.quantity %> €</p>
-      <%= link_to "Pay", pay_order_path(order), class: "btn-yours" %>
-    <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-1" class="buttonpay" style="padding-left: 132px; padding-top: 33px; padding-right: 67px">
+
+      <% if order.paid.nil? || order.paid == false %>
+        <%= link_to "Pay", pay_order_path(order), class: "btn-yours" %>
+        <% else %>
+        <span class="btn-paid" style="color: white; padding: 10px 30px; border-radius: 4px; font-weight:bold; background: #6AD58B; transition: background 0.3s ease; text-align: center">Paid</span>
+        <% end  %>
+    </div>
   </div>
+  <% end %>
 </div>
 
