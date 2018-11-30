@@ -1,10 +1,12 @@
 <div class="banner">
   <div class="banner-content" >
-    <h1>WELCOME</h1>
-    <p>Tous vos produits pour votre beauté!<br><br></p>
-    <a href="" class="btn-yours">Nos produits pour vous combler</a>
+    <h1>FRESH PRODUCTS FOR FRESH PEOPLE</h1>
+    <p>Take care of your beauty.<br><br></p>
+    <a href="" class="btn-yours">OUR PRODUCTS</a>
   </div>
 </div>
+
+
 <div class="container">
   <%= form_tag products_path, method: :get do %>
     <%= text_field_tag :query,
@@ -13,24 +15,21 @@
       placeholder: "Recherchez vos secrets"
     %>
   <% end %>
-  <h2 class="text-center">Nos produits</h2>
+  <h2 class="text-center" style="padding: 50px 0px">Products</h2>
   <div class="cards">
     <!-- Code your cards  here -->
     <% @products.each do |p| %>
     <%= link_to p do  %>
     <div class="card" >
       <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2);">
-        <%= cl_image_tag p.image, height: 180, crop: :fill %>
-        <!-- <span class="card-category">TEXAS</span> -->
-        <div class="card-description">
-          <%= p.title %><br><br>
-          <%= p.category %>
-        </div>
+        <%= cl_image_tag p.image, height: 220, width:300, crop: :fill %>
+        <!-- <!-- <span class="card-category">TEXAS</span> -->
         <!-- <img class="avatar-large" src="images/actrice1.jpg">
         <a class="card-link" href="#"></a> -->
       </div>
       <div class="card-footer">
-        <p>SEE PRODUCT</p>
+        <p><%= p.title.capitalize %></p>
+        <p>See product</p>
       </div>
     </div>
     <% end %>
