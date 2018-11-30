@@ -7,3 +7,4 @@ Rails.application.routes.draw do
       get 'pay', to: 'orders#pay'
     end
   end
+end
