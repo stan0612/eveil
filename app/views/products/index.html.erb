@@ -20,24 +20,26 @@
   <% end %>
   <br><br><br><br>
   <div class="cards">
+    <div class="row">
     <!-- Code your cards  here -->
+
     <% @products.each do |p| %>
+    <div class="col-xs-12 col-sm-4">
     <%= link_to p do  %>
+
     <div class="card" >
-      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2);">
-        <%= cl_image_tag p.image, height: 220, width:300, crop: :fill %>
-        <!-- <!-- <span class="card-category">TEXAS</span> -->
-        <!-- <img class="avatar-large" src="images/actrice1.jpg">
-        <a class="card-link" href="#"></a> -->
+      <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('<%= cl_image_path p.image %>');">
       </div>
       <div class="card-footer">
         <p><%= p.title.capitalize %></p>
-        <p>See product</p>
       </div>
     </div>
     <% end %>
+    </div>
+
     <% end %>
     <!-- style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2);
     -->
+    </div>
   </div>
 </div>
