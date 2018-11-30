@@ -3,8 +3,8 @@
     <div class="col-xs-12 col-sm-4" style="padding-top: 50px">
       <%= cl_image_tag @product.image, height: 300, width: 400, crop: :fill %>
     </div>
-      <div class="col-xs-12 col-sm-8" class="titre" style="padding-left: 100px; padding-top: 50px">
-        <h1><%= @product.title %></h1>
+    <div class="col-xs-12 col-sm-8" class="titre" style="padding-left: 100px; padding-top: 50px">
+      <h1><%= @product.title %></h1>
       <p><%= @product.description %></p>
       <p><%= @product.price %> €</p>
       <p>Category: <%= @product.category %></p>
@@ -14,6 +14,24 @@
       <%= f.submit "Add to card", class: "btn-yours", method: :post%>
       <% end %>
       <p><%= link_to "Back to all products", root_path %></p>
+    </div>
+  </div>
 
-      </div>
+  <div class="list-group">
+    <% @order.product.reviews.each do |review| %>
+    <li class="list-group-item">
+      <small>
+      <% count = 0 %>
+      <% 5.times do %>
+      <% if review.rating > count %>
+      <i class="fas fa-star"></i>
+      <% else %>
+      <i class="far fa-star"></i>
+      <% end %>
+      <% count += 1 %>
+      <% end %>
+      </small>
+      <p><%= review.content %></p>
+    </li>
+    <% end %>
   </div>

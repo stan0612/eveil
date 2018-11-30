@@ -1,10 +1,9 @@
 class Product < ApplicationRecord
   mount_uploader :image, PhotoUploader
 
-
   belongs_to :seller, class_name: "User", foreign_key: :user_id
-
-  has_many :reviews, through: :order
+  has_many :orders
+  has_many :reviews, through: :orders
 
   validates :title, presence: true
   validates :description, presence: true
@@ -12,9 +11,9 @@ class Product < ApplicationRecord
   validates :initial_stock, presence: true
 
   include PgSearch
-    pg_search_scope :search_by_title_and_description,
-      against: [ :title, :description ],
-      using: {
-        tsearch: { prefix: true } # <-- now `superman batm` will return something!
-      }
+  pg_search_scope :search_by_title_and_description,
+    against: [:title, :description],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
