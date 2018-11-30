@@ -14,6 +14,24 @@
       <%= f.submit "Add to card", class: "btn-yours", method: :post%>
       <% end %>
       <p><%= link_to "Back to all products", root_path %></p>
+    </div>
+  </div>
 
-      </div>
+  <div class="list-group">
+    <% @order.product.reviews.each do |review| %>
+    <li class="list-group-item">
+      <small>
+      <% count = 0 %>
+      <% 5.times do %>
+      <% if review.rating > count %>
+      <i class="fas fa-star"></i>
+      <% else %>
+      <i class="far fa-star"></i>
+      <% end %>
+      <% count += 1 %>
+      <% end %>
+      </small>
+      <p><%= review.content %></p>
+    </li>
+    <% end %>
   </div>
