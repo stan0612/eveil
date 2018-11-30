@@ -5,6 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-
-
+puts 'Creating 12 fake products...'
+12.times do
+  product = Product.new(
+    title:    Faker::Company.name,
+    description: "#{Faker::description}, #{Faker::Product.description}",
+    price:  rand(1..50)
+  )
+  product.save!
+end
+puts 'Finished!'
