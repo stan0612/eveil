@@ -1,6 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+a:hover {
+text-decoration: none;
+}
+
 body {
   margin: 0;
   margin-bottom: 100px;
@@ -13,10 +17,10 @@ h1, h2, h3, {
 .text-center {
   text-align: center;
 }
-.container {
-  max-width: 1000px;
-  margin: 0 auto; /* 0px => top/bottom, automatic => left/right */
-}
+// .container {
+//   max-width: 1000px;
+//   margin: 0 auto; /* 0px => top/bottom, automatic => left/right */
+// }
 
 .cards {
   display: flex;
@@ -40,13 +44,16 @@ h1, h2, h3, {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    text-decoration: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.card:hover p {
+  text-decoration: none;
 }
 
 .card-body {
   height: 220px;
-  width: 300px;
   background-position: center;
   background-size: cover;
   color: white;
